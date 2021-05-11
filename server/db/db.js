@@ -22,10 +22,16 @@ if (process.env.DATABASE_URL) {
   }
 }
 
-const db = new Sequelize(
-  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
-  config
-)
+// const db = new Sequelize(
+//   process.env.DATABASE_URL || `postgres://localhost:5432/fml`, '990Green!',
+//   config
+// )
+
+const db = new Sequelize('fml', 'postgres', 'fml', {
+  host: 'localhost',
+  dialect: 'postgres',
+  logging: false
+})
 
 module.exports = db
 
