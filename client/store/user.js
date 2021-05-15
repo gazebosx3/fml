@@ -6,6 +6,10 @@ import history from '../history'
  */
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
+const CREATE_SONG = 'CREATE_SONG'
+const CREATE_PICK = 'CREATE_PICK'
+const GET_ALL_USER_SONGS = 'GET_ALL_USER_SONGS'
+const GET_ALL_USER_PICKS = 'GET_ALL_USER_PICKS'
 
 /**
  * INITIAL STATE

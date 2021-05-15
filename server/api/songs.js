@@ -25,3 +25,31 @@ router.post('/createSong', async (req, res, next) => {
     next(err)
   }
 })
+
+router.post('/createSong', async (req, res, next) => {
+  const {artist, name, userId} = req.body
+  try {
+    const user = await User.create({artist, name, userId})
+
+    res.sendStatus(201)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/getSong', async (req, res, next) => {
+  const {title, artist} = req.query
+
+  try {
+    const song = await Song.findOne({
+      where: {
+        title,
+        artist
+      }
+    })
+
+    res.send(song)
+  } catch (err) {
+    next(err)
+  }
+})
